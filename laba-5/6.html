@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Задание №6</title>
+	<style type="text/css">
+
+		.but{
+			right:30px;
+			bottom: 30px;
+			position: fixed;
+			height: 60px;
+			width:180px;
+			font-size: 30px;
+			color: white;
+			background-color: red;
+			opacity: 0;
+
+			
+		}
+		.but._active{
+			opacity: 1;
+		}
+	
+		
+		p{
+			width:100px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>	
+	<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem mi, eleifend et feugiat quis, lacinia id ante. Donec tempor metus in mi pellentesque, at ultricies sapien malesuada. Nunc eleifend diam at leo fermentum mollis. Nam cursus, felis sed posuere posuere, nulla arcu eleifend orci, a interdum nisl leo at elit. Suspendisse id nisl enim. Vivamus sed elit lorem. Sed vestibulum sit amet sem ut auctor. Praesent ornare tristique magna ultrices dictum. Morbi leo odio, euismod eget interdum at, faucibus eget turpis. Aliquam faucibus non ipsum in imperdiet. Vestibulum id mi ac erat convallis tempor. Nulla tempus, nibh ut lobortis tempor, arcu nisi gravida turpis, quis ultrices tortor ligula vel nibh.
+
+Nullam pulvinar congue rutrum. Vivamus vitae nunc consequat, rhoncus lectus eu, tristique arcu. Sed fermentum luctus nibh vel dapibus. Proin mattis massa eu sapien eleifend laoreet. Sed at lectus ultricies, laoreet eros ac, ultrices sem. Sed ut dapibus turpis, lobortis commodo urna. Proin quis semper augue. Mauris in augue ut diam vestibulum sagittis ut eget enim. Fusce ut porta erat, in vulputate nisi. Aliquam vel nibh est. Etiam in est eget purus ultrices venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Sed arcu orci, bibendum in purus vel, vulputate porttitor est. Mauris ullamcorper enim orci, vitae consequat mauris varius quis. Donec eget magna felis. Nulla facilisi. Sed commodo, odio eu ullamcorper interdum, nisl lacus fermentum diam, quis porta est nisi ut purus. Pellentesque ut nulla vel purus accumsan pharetra. Integer egestas, risus vel mattis maximus, purus lacus condimentum lacus, sed finibus justo ante vel odio. Maecenas viverra consectetur mollis. Maecenas eu augue a nulla mollis eleifend et vel ante.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum convallis nisl nisi, posuere dictum lorem interdum sed. Phasellus eget bibendum nulla. Nulla eros ipsum, vestibulum at turpis in, bibendum venenatis risus. Sed ultrices venenatis massa, sit amet feugiat massa dignissim ut. Nam nec feugiat lectus. Duis aliquam urna at nulla interdum, id iaculis eros tincidunt. Nunc lectus velit, convallis eget vulputate tempus, commodo vel ipsum. Donec hendrerit aliquet libero id imperdiet. In quis odio auctor, elementum velit a, rutrum nunc. Pellentesque sapien mauris, sodales a elit ut, convallis malesuada purus. Vivamus a consectetur libero. Duis sit amet euismod justo, nec aliquet nibh. Nam pellentesque, est porttitor pretium maximus, diam libero accumsan quam, quis feugiat sem ipsum nec est.
+
+Cras vitae lobortis quam. Donec varius dapibus quam non rutrum. Sed facilisis interdum neque eu pulvinar. Nullam viverra, turpis et suscipit laoreet, arcu ipsum porta nulla, sit amet pretium turpis eros ac justo. Integer vehicula mollis nisi. Curabitur ultrices nisl non ex blandit consectetur. Sed ac mauris eros. Vestibulum non hendrerit sapien. Nam tempor quis purus id mattis. Phasellus egestas ornare suscipit. Maecenas placerat eros consequat dictum ornare. Nunc pulvinar eu ex et fringilla. Morbi sit amet accumsan velit, vel ornare ipsum. </p>
+	<button class="but" onclick="wwerh()" id='but'>Кнопка</button>
+
+	
+
+
+
+	<script type="text/javascript">
+		alert(document.documentElement.clientWidth)
+			window.addEventListener('scroll', function() {
+  	if((window.pageYOffset >1000) & (((1900 < document.documentElement.clientWidth)&(document.documentElement.clientWidth < 1930))|((1350 < document.documentElement.clientWidth)&(document.documentElement.clientWidth < 1380)))){
+		  		  document.getElementById("but").classList.add('_active');
+      		} 
+      		else{
+        		document.getElementById("but").classList.remove('_active');}
+});
+	
+			function wwerh() {
+	
+				window.scrollTo(0,0)
+				document.getElementById("but").classList.remove('_active');
+					
+				}
+			
+	</script>
+</body>
+</html>
+		

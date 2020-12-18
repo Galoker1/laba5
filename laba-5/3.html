@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Задание №3</title>
+	<style type="text/css">
+		#but{
+			height: 60px;
+			width:180px;
+			font-size: 30px;
+			color: white;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>	
+	<input type="" name="" id="one" value="">
+	<input type="" name="" id="two" value="">
+	<button id="but" onclick="al()" >1 -> 2 </button>
+	<button id="but" onclick="cleaning()" >Clear</button>
+
+
+	<script type="text/javascript">
+		function al() {
+
+if (document.getElementById('one').value.length !=0){document.getElementById('two').value=document.getElementById('one').value
+				}
+			else{alert('Первое поле пустое!')}
+			}
+		
+
+
+		function cleaning() {
+			document.getElementById('two').value=''
+			document.getElementById('one').value=''
+			
+		}
+	</script>
+</body>
+</html>

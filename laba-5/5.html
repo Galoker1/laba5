@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Задание №5</title>
+	<style type="text/css">
+		.calculator{
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  background-color: #e3dfde;
+  height: 600px;
+  width: 360px;
+  border-radius: 3px;
+}
+.bluebtn{
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color:#9bc9d3;
+  height: 60px;
+  width: 230px;
+  border:1px solid black;
+  border-radius: 3px;
+  color:white;
+}
+.dfbtn{
+  border:1px solid black;
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color:#898989;
+  height: 60px;
+  width: 60px;
+    border-radius: 3px;
+    color: white;
+}
+.dfbigbtn{
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color:#898989;
+  height: 60px;
+  width: 230px;
+    border:1px solid black;
+      border-radius: 3px;
+      color:white;
+}
+.greenbtn{
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color:#68d574;
+  height: 60px;
+  width: 60px;
+  border:1px solid black;
+    border-radius: 3px;
+    color:white;
+}
+.display{
+  background-color: #e3dfde;
+  margin-left: 2px;
+  width: 350px;
+  text-align: right;
+  height: 80px;
+  font-size:50px;
+  color: black;
+
+}
+
+.string:hover >.light{
+  background-color:#739e7e;
+}
+.string:hover >.dark{
+  background-color:#5f8167;
+}
+
+
+  </style>
+	</style>
+</head>
+<body>	
+	<div class="calculator" >
+              <input type="text" name="" value="" disabled class="display" id="pole">
+              <hr>
+              <div class="numpad">
+                <button class="bluebtn"type="button" name="button" onclick="cle()">C</button>
+                <button class="dfbtn" type="button" name="button" onclick="action('/')">/</button>
+
+                <button class="dfbtn" type="button" name="button" onclick="nums('7')">7</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('8')">8</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('9')">9</button>
+                <button class="dfbtn" type="button" name="button" onclick="action('*')">x</button>
+
+                <button class="dfbtn" type="button" name="button" onclick="nums('4')">4</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('5')">5</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('6')">6</button>
+                <button class="dfbtn" type="button" name="button" onclick="action('-')">-</button>
+
+                <button class="dfbtn" type="button" name="button" onclick="nums('1')">1</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('2')">2</button>
+                <button class="dfbtn" type="button" name="button" onclick="nums('3')">3</button>
+                <button class="dfbtn" type="button" name="button" onclick="action('+')" >+</button>
+
+                <button class="dfbigbtn" type="button" name="button" onclick="zero()">0</button>
+                <button class="greenbtn"  type="button" name="button" onclick="chet()">=</button>
+            </div></div>
+
+
+
+	<script type="text/javascript">
+		let znak=false
+		function action(x){
+			let doc = document.getElementById('pole').value;
+			let len = document.getElementById('pole').value.length - 1;
+			let lastel=doc[len];
+			if ((document.getElementById('pole').value.length > 0) & (lastel != "-") & (lastel != "+") & (lastel != "*") & (lastel != "/") & (znak == false)){
+				document.getElementById('pole').value+=x
+				znak = true
+				}
+			}
+		
+		function nums(x){
+			console.log('hello'[1]);
+			document.getElementById('pole').value += x;
+		}
+		
+		function cle(){
+			document.getElementById('pole').value = ""
+			znak = false
+
+		}
+		function zero() {
+			let doc = document.getElementById('pole').value;
+			let len = document.getElementById('pole').value.length - 1;
+			let lastel=doc[len];
+			if ((len + 1 > 0) & (lastel != "-") & (lastel != "+") & (lastel != "*") & (lastel != "/") ){
+				document.getElementById('pole').value += '0';
+			}
+			
+		}
+		function chet(){
+			let doc = document.getElementById('pole').value;
+			let len = document.getElementById('pole').value.length - 1;
+			let lastel=doc[len];
+				if ((len > 0) & (lastel != "-") & (lastel != "+") & (lastel != "*") & (lastel != "/")){
+					document.getElementById('pole').value=eval(doc)	
+					znak=false
+				}
+		}
+
+	
+	
+	</script>
+</body>
+</html>

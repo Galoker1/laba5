@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Задание №4</title>
+	<style type="text/css">
+		#but{
+			height: 60px;
+			width:180px;
+			font-size: 30px;
+			color: white;
+			background-color: red;
+		}
+
+   table{
+     
+    border-collapse: collapse;
+   }
+   tr,td {
+    padding: 3px;
+    border: 1px solid black; 
+   }
+
+  </style>
+	</style>
+</head>
+<body>	
+	<input type="number" name="" id="one" v min="1" value="1" >
+	<input type="number" name="" id="two"   min="1" value="1" >
+	<button id="but" onclick="tabl()" > Create </button> 
+	<table id="tabl" ></table>
+
+
+
+	<script type="text/javascript">
+		function tabl() {
+		let x = document.getElementById('one').value;
+		let y = document.getElementById('two').value;
+		let table = document.getElementById('tabl');
+		let stroka
+		for (let i=0; i<x; i++) {
+			stroka= document.createElement('tr');
+			for (var k = 0; k < y; k++) {
+					let stolbec= document.createElement('td');
+					let stzn = document.createTextNode(Math.floor((Math.random() * (10 - 1) + 1)/1));
+
+      				stolbec.appendChild(stzn);
+      				stroka.appendChild(stolbec);
+			}
+			table.appendChild(stroka)
+			
+		
+
+			}
+		
+			
+}
+
+		
+
+	
+	
+	</script>
+</body>
+</html>
