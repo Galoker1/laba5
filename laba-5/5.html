@@ -129,7 +129,7 @@
 			let doc = document.getElementById('pole').value;
 			let len = document.getElementById('pole').value.length - 1;
 			let lastel=doc[len];
-			if ((len + 1 > 0) & (lastel != "-") & (lastel != "+") & (lastel != "*") & (lastel != "/") ){
+			if  (lastel != "/" ){
 				document.getElementById('pole').value += '0';
 			}
 			

@@ -29,6 +29,7 @@
 		<button class="but" id='8' onclick="step(8)"></button>
 		<button class="but" id='9' onclick="step(9)"></button> <br>
 		<button onclick="reset()" style="background-color: red;width: 100px;height: 100px;margin-top: 30px;background-image:url('rel.png');background-size: contain;padding: 5px;"></button>
+		<div id='text'></div>
 
 	<script type="text/javascript">
 		let step_num=0;
@@ -61,6 +62,7 @@
 				document.getElementById(i).value='o'
 				document.getElementById(i).disabled = true;
 				step_num+=1;
+
 				win_or_lose()
 			}
 		
@@ -81,18 +83,27 @@
   			eight=document.getElementById("8").value
   			nine=document.getElementById("9").value
 
-  			if ((one=='x' & two=='x' & three=='x')|(four=='x' & five=='x' & six=='x')|(seven=='x' & eight=='x' & nine=='x')|(one=='x' & four=='x' & seven=='x')|(two=='x' & five=='x' & eight=='x')|(three=='x' & six=='x' & nine=='x')|(one=='x' & five=='x' & nine=='x')|(three=='x' & five=='x' & seven=='x')){
-  				alert('Вы выйграли')
-  				reset()
+  			if ((one=='x' & two=='x' & three=='x')||(four=='x' && five=='x' & six=='x')||(seven=='x' && eight=='x' & nine=='x')||(one=='x' && four=='x' && seven=='x')||(two=='x' && five=='x' && eight=='x')||(three=='x' && six=='x' && nine=='x')||(one=='x' && five=='x' && nine=='x')||(three=='x' && five=='x' && seven=='x')){
+  				const wintext = document.createElement("H1");
+  				wintext.innerHTML="Вы выйграли";
+  				wintext.style.color='green';
+  				document.getElementById('text').appendChild(wintext)
+  				end();
   			}
-  			else if((one=='o' & two=='o' & three=='o')|(four=='o' & five=='o' & six=='x')|(seven=='o' & eight=='o' & nine=='o')|(one=='o' & four=='o' & seven=='o')|(two=='o' & five=='o' & eight=='o')|(three=='o' & six=='o' & nine=='o')|(one=='o' & five=='o' & nine=='o')|(three=='o' & five=='o' & seven=='o')){
-  				alert('Вы проиграли')
-  				reset()
+  			else if((one=='o' && two=='o' && three=='o')||(four=='o' && five=='o' && six=='o')||(seven=='o' && eight=='o' && nine=='o')||(one=='o' && four=='o' && seven=='o')||(two=='o' && five=='o' && eight=='o')||(three=='o' && six=='o' && nine=='o')||(one=='o' && five=='o' && nine=='o')||(three=='o' && five=='o' && seven=='o')){
+  				const wintext = document.createElement("H1");
+  				wintext.innerHTML="Вы проиграли";
+  				wintext.style.color='red';
+  				document.getElementById('text').appendChild(wintext)
+  				end();
 
   			}
   			else if(step_num==9){
-  				alert('Ничья')
-  				reset()
+  				const wintext = document.createElement("H1");
+  				wintext.innerHTML="Ничья";
+  				wintext.style.color='yellow';
+  				document.getElementById('text').appendChild(wintext)
+  				end();
 
   			}
   			else{
@@ -101,7 +112,19 @@
   			
 
   		}
-		
+	function end() {
+		one=document.getElementById("1").disabled=true;
+  			two=document.getElementById("2").disabled=true;
+  			three=document.getElementById("3").disabled=true;
+
+  			four=document.getElementById("4").disabled=true;
+  			five=document.getElementById("5").disabled=true;
+  			six=document.getElementById("6").disabled=true;
+
+  			seven=document.getElementById("7").disabled=true;
+  			eight=document.getElementById("8").disabled=true;
+  			nine=document.getElementById("9").disabled=true;
+	}
 	</script>
 </body>
 </html>
